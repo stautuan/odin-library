@@ -6,6 +6,10 @@ const addBtn = document.querySelector('.btn--add');
 const newBtn = document.querySelector('.btn--new');
 const closeBtn = document.querySelector('.btn--close');
 const remove = document.querySelector('.delete');
+const inputTitle = document.getElementById('title');
+const inputAuthor = document.getElementById('author');
+const inputImageUrl = document.getElementById('image');
+const form = document.querySelector('form');
 
 const myLibrary = [];
 
@@ -13,37 +17,18 @@ function Book(title, author, image) {
   this.title = title;
   this.author = author;
   this.image = image;
-
-  function toggleReadStatus() {}
 }
 
 function clearAllFields() {
-  inputTitle = '';
-  inputAuthor = '';
-  inputImageUrl = '';
+  inputTitle.value = '';
+  inputAuthor.value = '';
+  inputImageUrl.value = '';
 }
 
-// Function that takes user's input and stores them into the myLibrary array
-function addBookToLibrary() {
-  const inputTitle = document.getElementById('title').value;
-  const inputAuthor = document.getElementById('author').value;
-  const inputImageUrl = document.getElementById('image').value;
-
-  let book = new Book(inputTitle, inputAuthor, inputImageUrl);
-  myLibrary.push(book);
-}
-
-addBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  addBookToLibrary();
-
-  // Function that loops through the array and renders the book on the page
-  myLibrary.forEach((book) => {
-    const markup = `
+// Renders the html to the DOM
+function renderBook(book) {
+  const markup = `
           <div class="book">
-            <span class="ribbon-wrap">
-              <span class="ribbon"></span>
-            </span>
             <img
               class="book__cover"
               src="${
@@ -61,9 +46,24 @@ addBtn.addEventListener('click', (e) => {
             </div>
           </div>
   `;
-    clearAllFields();
-    bookContainer.insertAdjacentHTML('beforeend', markup);
-  });
+  clearAllFields();
+  bookContainer.insertAdjacentHTML('beforeend', markup);
+}
+
+// Function that takes user's input and stores them into the myLibrary array
+function addBookToLibrary() {
+  const newTitle = inputTitle.value;
+  const newAuthor = inputAuthor.value;
+  const newImage = inputImageUrl.value;
+
+  let book = new Book(newTitle, newAuthor, newImage);
+  myLibrary.push(book);
+  renderBook(book);
+}
+
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  addBookToLibrary();
 });
 
 // Opens and closes the dialog
@@ -72,6 +72,7 @@ newBtn.addEventListener('click', () => {
 });
 closeBtn.addEventListener('click', () => {
   dialog.close();
+  clearAllFields();
 });
 
 /**

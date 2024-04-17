@@ -28,15 +28,16 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   letter-spacing: -1px;
+  margin-bottom: 3rem;
 }
 
 .btn {
@@ -64,14 +65,22 @@ main {
 }
 
 .bookshelf {
-  width: 70rem;
+  width: 40rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   justify-items: center;
-  gap: 6rem;
+  gap: 3rem;
   padding: 4rem;
   border-radius: 2rem;
   position: relative;
+}
+
+@media screen and (min-width: 780px) {
+  .bookshelf {
+    width: 70rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+  }
 }
 
 .book {
@@ -83,12 +92,34 @@ main {
 }
 
 .book__cover {
-  height: 22rem;
-  /* width: 14rem; */
+  height: 30rem;
   margin-bottom: 1rem;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 565px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .bookshelf {
+    width: 50rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .book__cover {
+    height: 22rem;
+  }
 }
 
 .book__info {
@@ -155,11 +186,13 @@ main {
   opacity: 1;
 }
 
-form {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fafaf8;
+  padding: 6rem 4rem 4rem;
 }
 
 form div {
@@ -186,42 +219,17 @@ input {
   padding: 10px 20px;
 }
 
-/* form div:last-child {
+.add-section {
   display: flex;
   justify-content: center;
   margin-bottom: 0;
-} */
-
-.btn-dialogue {
-  display: flex;
-
-  justify-content: space-between;
 }
 
-.btn--add,
-.status {
+.btn--add {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 1.2px;
-}
-
-.status {
-  color: #888;
-}
-
-.status:hover {
-  color: #911750;
-  border-bottom: 1px solid #fafaf8;
-}
-
-dialog {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fafaf8;
-  padding: 6rem 4rem 4rem;
 }
 
 .btn--close {
