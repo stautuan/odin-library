@@ -9,7 +9,6 @@ function Book(title, author, image) {
 }
 
 // Function that takes user's input and stores new books into the myLibrary array
-
 function addBookToLibrary() {
   const inputTitle = document.getElementById('title').value;
   const inputAuthor = document.getElementById('author').value;
@@ -56,3 +55,16 @@ addBtn.addEventListener('click', (e) => {
     bookContainer.insertAdjacentHTML('beforeend', markup);
   });
 });
+
+// Opens and closes the dialog
+const newBtn = document.querySelector('.btn--new');
+const closeBtn = document.querySelector('.btn--close');
+const dialog = document.querySelector('dialog');
+newBtn.addEventListener('click', () => {
+  dialog.showModal();
+});
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+});
+
+// Removes the book from the library
