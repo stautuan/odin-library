@@ -156,10 +156,10 @@ main {
 }
 
 form {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 form div {
@@ -186,17 +186,33 @@ input {
   padding: 10px 20px;
 }
 
-form div:last-child {
+/* form div:last-child {
   display: flex;
   justify-content: center;
   margin-bottom: 0;
+} */
+
+.btn-dialogue {
+  display: flex;
+
+  justify-content: space-between;
 }
 
-.btn--add {
+.btn--add,
+.status {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 1.2px;
+}
+
+.status {
+  color: #888;
+}
+
+.status:hover {
+  color: #911750;
+  border-bottom: 1px solid #fafaf8;
 }
 
 dialog {
