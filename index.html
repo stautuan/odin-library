@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Stacy's Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>My Library</h1>
+        <button class="btn btn--new">New Book</button>
+      </header>
+      <main>
+        <div class="bookshelf">
+          <div class="book">
+            <span class="ribbon-wrap">
+              <span class="ribbon ribbon--read"></span>
+            </span>
+            <img
+              class="book__cover book--read"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1659905828i/7235533.jpg"
+              alt="The Way of Kings book cover"
+            />
+
+            <div class="book__info">
+              <p class="book__title">The Way of Kings</p>
+              <p class="book__author">Brandon Sanderson</p>
+              <!-- <p class="book__page">1007 pages</p> -->
+              <span class="delete">Remove</span>
+            </div>
+          </div>
+
+          <div class="book">
+            <span class="ribbon-wrap">
+              <span class="ribbon ribbon--read"></span>
+            </span>
+            <img
+              class="book__cover"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1659905768i/17332218.jpg"
+              alt="Words of Radiance book cover"
+            />
+
+            <div class="book__info">
+              <p class="book__title">Words of Radiance</p>
+              <p class="book__author">Brandon Sanderson</p>
+              <!-- <p class="book__page">1087 pages</p> -->
+              <span class="delete">Remove</span>
+            </div>
+          </div>
+
+          <div class="book">
+            <span class="ribbon-wrap">
+              <span class="ribbon ribbon--read"></span>
+            </span>
+            <img
+              class="book__cover"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654573897i/34002132.jpg"
+              alt="Oathbringer book cover"
+            />
+
+            <div class="book__info">
+              <p class="book__title">Oathbringer</p>
+              <p class="book__author">Brandon Sanderson</p>
+              <!-- <p class="book__page">1243 pages</p> -->
+              <span class="delete">Remove</span>
+            </div>
+          </div>
+
+          <div class="book">
+            <span class="ribbon-wrap">
+              <span class="ribbon ribbon--unread"></span>
+            </span>
+            <img
+              class="book__cover"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1599911216i/49021976.jpg"
+              alt="Rhythm of War book cover"
+            />
+
+            <div class="book__info">
+              <p class="book__title">Rhythm of War</p>
+              <p class="book__author">Brandon Sanderson</p>
+              <span class="delete">Remove</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- <dialog> -->
+        <button class="btn btn--close">&times;</button>
+        <form>
+          <div>
+            <label for="title">Title</label
+            ><input type="text" name="title" id="title" />
+          </div>
+          <div>
+            <label for="author">Author</label
+            ><input type="text" name="author" id="author" />
+          </div>
+          <div>
+            <label for="image">Image Url</label
+            ><input type="text" name="image" id="image" />
+          </div>
+          <div>
+            <button class="btn btn--add">Add book</button>
+          </div>
+        </form>
+        <!-- </dialog> -->
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
