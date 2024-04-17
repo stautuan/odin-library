@@ -2,7 +2,6 @@
 
 const bookContainer = document.querySelector('.bookshelf');
 const dialog = document.querySelector('dialog');
-const addBtn = document.querySelector('.btn--add');
 const newBtn = document.querySelector('.btn--new');
 const closeBtn = document.querySelector('.btn--close');
 const remove = document.querySelector('.delete');
@@ -60,7 +59,7 @@ function addBookToLibrary() {
   renderBook(book);
 }
 
-addBtn.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   addBookToLibrary();
 });
