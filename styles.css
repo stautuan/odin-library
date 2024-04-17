@@ -75,14 +75,6 @@ main {
   position: relative;
 }
 
-@media screen and (min-width: 780px) {
-  .bookshelf {
-    width: 70rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6rem;
-  }
-}
-
 .book {
   display: flex;
   flex-direction: column;
@@ -119,6 +111,14 @@ main {
 
   .book__cover {
     height: 22rem;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .bookshelf {
+    width: 70rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
   }
 }
 

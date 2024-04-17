@@ -25,7 +25,6 @@ function clearAllFields() {
   inputImageUrl.value = '';
 }
 
-// Renders the html to the DOM
 function renderBook(book) {
   const markup = `
           <div class="book">
