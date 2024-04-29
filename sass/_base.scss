@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -69,7 +71,8 @@ h1 {
   &__item {
     position: relative;
 
-    &:hover .delete {
+    &:hover .delete,
+    &:hover .edit {
       opacity: 1;
     }
   }
@@ -101,10 +104,17 @@ h1 {
     color: var(--secondaryColor);
     margin-bottom: 1rem;
   }
+
+  &__modify {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
-.delete {
-  font-size: 1.2rem;
+.delete,
+.edit {
+  // font-family: 'Inconsolata', monospace;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--tertiaryColor);
   letter-spacing: 1px;
@@ -112,6 +122,7 @@ h1 {
   opacity: 0;
   cursor: pointer;
   transition: all 0.5s;
+  transform: rotate(90deg);
 
   &:hover {
     color: var(--primaryColor);

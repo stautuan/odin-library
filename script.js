@@ -26,7 +26,7 @@ function clearAllFields() {
 
 function renderBook(book) {
   const markup = `
-          <div class="book">
+          <div class="book__item">
             <img
               class="book__cover"
               src="${book.image ? book.image : './assets/images/book-0.png'}"
@@ -36,7 +36,10 @@ function renderBook(book) {
             <div class="book__info">
               <p class="book__title">${book.title}</p>
               <p class="book__author">${book.author}</p>
-              <span class="delete">Remove</span>
+              <div class="book__modify flex">
+                <span class="edit">✏️</span>
+                <span class="delete">❌</span>
+              </div>
             </div>
           </div>
   `;
