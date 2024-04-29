@@ -1,6 +1,6 @@
 'use script';
 
-const bookContainer = document.querySelector('.bookshelf');
+const bookContainer = document.querySelector('.book__container');
 const dialog = document.querySelector('dialog');
 const newBtn = document.querySelector('.btn-new');
 const closeBtn = document.querySelector('.btn-close');
@@ -29,11 +29,7 @@ function renderBook(book) {
           <div class="book">
             <img
               class="book__cover"
-              src="${
-                book.image
-                  ? book.image
-                  : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png'
-              }"
+              src="${book.image ? book.image : './assets/images/book-0.png'}"
               alt="${book.title} book cover"
             />
 
@@ -81,6 +77,6 @@ closeBtn.addEventListener('click', () => {
  */
 bookContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
-    e.target.closest('.book').remove();
+    e.target.closest('.book__item').remove();
   }
 });
