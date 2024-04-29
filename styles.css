@@ -84,13 +84,17 @@ main {
 }
 
 .book__cover {
-  height: 30rem;
   margin-bottom: 1rem;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
+.img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
 @media screen and (min-width: 565px) {
   .header {
     display: flex;
@@ -107,10 +111,6 @@ main {
     width: 50rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-  }
-
-  .book__cover {
-    height: 22rem;
   }
 }
 
@@ -225,14 +225,14 @@ input {
   margin-bottom: 0;
 }
 
-.btn--add {
+.btn-add {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 1.2px;
 }
 
-.btn--close {
+.btn-close {
   height: 2rem;
   width: 2rem;
   font-size: 3rem;
@@ -241,7 +241,7 @@ input {
   position: absolute;
 }
 
-.btn--close:hover {
+.btn-close:hover {
   border-bottom: 2px solid #fafaf8;
 }
 

@@ -2,8 +2,8 @@
 
 const bookContainer = document.querySelector('.bookshelf');
 const dialog = document.querySelector('dialog');
-const newBtn = document.querySelector('.btn--new');
-const closeBtn = document.querySelector('.btn--close');
+const newBtn = document.querySelector('.btn-new');
+const closeBtn = document.querySelector('.btn-close');
 const remove = document.querySelector('.delete');
 const inputTitle = document.getElementById('title');
 const inputAuthor = document.getElementById('author');
