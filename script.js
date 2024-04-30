@@ -55,7 +55,7 @@ function renderBook(book) {
   const markup = `
           <article class="book__item">
             <img
-              class="book__cover img"
+              class="book__cover img opacity-5"
               src="${book.image ? book.image : './assets/images/book-0.png'}"
               alt="${book.title} book cover"
             />
@@ -64,7 +64,7 @@ function renderBook(book) {
               <p class="book__author">${book.author}</p>
               <div class="book__modify flex">
                 <span class="edit" title="Toggle read">📖</span>
-                <span class="delete" title="Remove book">❌</span>
+                <span class="delete" title="Remove book">✖️</span>
               </div>
             </div>
           </article>
@@ -78,7 +78,11 @@ bookContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('edit')) {
     const parent = e.target.closest('.book__item');
     const bookCover = parent.querySelector('.book__cover');
+    const titleToggle = parent.querySelector('.edit');
     bookCover.classList.toggle('opacity-5');
+    bookCover.classList.contains('opacity-5')
+      ? (titleToggle.title = 'Toggle read')
+      : (titleToggle.title = 'Toggle unread');
   }
 });
 

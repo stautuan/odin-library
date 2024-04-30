@@ -34,6 +34,10 @@
      object-fit: cover;
 }
 
+.opacity-5 {
+  opacity: 0.5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -151,11 +155,6 @@ h1 {
   padding: 3px 8px;
   background-color: #eeeeec;
   border-radius: 4px;
-}
-
-/* Book status */
-.opacity-5 {
-  opacity: 0.5;
 }
 
 /* Modal */
