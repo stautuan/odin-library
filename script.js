@@ -85,6 +85,11 @@ bookContainer.addEventListener('click', (e) => {
 // Deletes the book
 bookContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
-    e.target.closest('.book__item').remove();
+    if (
+      confirm(
+        'Are you sure you want to delete this book from your library?'
+      ) === true
+    )
+      e.target.closest('.book__item').remove();
   }
 });
