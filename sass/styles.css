@@ -134,39 +134,28 @@ h1 {
 
 .delete,
 .edit {
-  font-size: 1.5rem;
+  cursor: pointer;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--tertiaryColor);
   letter-spacing: 1px;
   text-transform: uppercase;
   opacity: 0;
-  cursor: pointer;
+  padding: 3px 8px;
+  background-color: transparent;
+  border-radius: 4px;
   transition: all 0.5s;
-  transform: rotate(90deg);
 }
 .delete:hover,
 .edit:hover {
-  color: var(--primaryColor);
+  padding: 3px 8px;
+  background-color: #eeeeec;
+  border-radius: 4px;
 }
 
 /* Book status */
-.ribbon {
-  position: absolute;
-  top: -3px;
-  right: -55px;
-  width: 3.2rem;
-  height: 4rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
-}
-.ribbon-wrap {
-  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
-}
-.ribbon--read {
-  background-color: var(--ribbon-read);
-}
-.ribbon--unread {
-  background-color: var(--ribbon-unread);
+.opacity-5 {
+  opacity: 0.5;
 }
 
 /* Modal */

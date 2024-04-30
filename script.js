@@ -18,36 +18,23 @@ function Book(title, author, image) {
   this.image = image;
 }
 
-function clearAllFields() {
+// Resets the form fields
+function resetForm() {
   inputTitle.value = '';
   inputAuthor.value = '';
   inputImageUrl.value = '';
 }
 
-function renderBook(book) {
-  const markup = `
-          <div class="book__item">
-            <img
-              class="book__cover"
-              src="${book.image ? book.image : './assets/images/book-0.png'}"
-              alt="${book.title} book cover"
-            />
+// Opens and closes the dialog
+newBtn.addEventListener('click', () => {
+  dialog.showModal();
+});
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+  resetForm();
+});
 
-            <div class="book__info">
-              <p class="book__title">${book.title}</p>
-              <p class="book__author">${book.author}</p>
-              <div class="book__modify flex">
-                <span class="edit">✏️</span>
-                <span class="delete">❌</span>
-              </div>
-            </div>
-          </div>
-  `;
-  clearAllFields();
-  bookContainer.insertAdjacentHTML('beforeend', markup);
-}
-
-// Function that takes user's input and stores them into the myLibrary array
+// Creates a new book object
 function addBookToLibrary() {
   const newTitle = inputTitle.value;
   const newAuthor = inputAuthor.value;
@@ -63,21 +50,39 @@ form.addEventListener('submit', (e) => {
   addBookToLibrary();
 });
 
-// Opens and closes the dialog
-newBtn.addEventListener('click', () => {
-  dialog.showModal();
-});
-closeBtn.addEventListener('click', () => {
-  dialog.close();
-  clearAllFields();
+// Renders the book object to the page
+function renderBook(book) {
+  const markup = `
+          <article class="book__item">
+            <img
+              class="book__cover img"
+              src="${book.image ? book.image : './assets/images/book-0.png'}"
+              alt="${book.title} book cover"
+            />
+            <div class="book__info">
+              <p class="book__title">${book.title}</p>
+              <p class="book__author">${book.author}</p>
+              <div class="book__modify flex">
+                <span class="edit" title="Toggle read">📖</span>
+                <span class="delete" title="Remove book">❌</span>
+              </div>
+            </div>
+          </article>
+  `;
+  resetForm();
+  bookContainer.insertAdjacentHTML('afterbegin', markup);
+}
+
+// Toggle read status of the book
+bookContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('edit')) {
+    const parent = e.target.closest('.book__item');
+    const bookCover = parent.querySelector('.book__cover');
+    bookCover.classList.toggle('opacity-5');
+  }
 });
 
-/**
- * Removes the book from the library using event delegation
- *
- * any event within the bookContainer (the parent) will be
- * checked if it contains the clicked target
- */
+// Deletes the book
 bookContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
     e.target.closest('.book__item').remove();
